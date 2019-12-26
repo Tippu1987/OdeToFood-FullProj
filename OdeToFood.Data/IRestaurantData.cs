@@ -7,5 +7,6 @@ namespace OdeToFood.Data
     {
         IEnumerable<Restaurant> GetAllRestaurantsByName(string name);
         Restaurant GetRestaurantById(int Id);
+        //Test checkin....
     }
 }
