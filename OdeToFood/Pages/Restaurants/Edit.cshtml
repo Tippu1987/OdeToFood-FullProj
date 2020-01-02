@@ -1,0 +1,9 @@
+﻿@page "{restaurantId:int}"
+@model OdeToFood.Pages.Restaurants.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Restaurant @Model.Restaurant.Name</h1>
+<a class="btn btn-dark" asp-page="./List">All Restaurants</a>
+

@@ -9,21 +9,18 @@ using OdeToFood.Data;
 
 namespace OdeToFood.Pages.Restaurants
 {
-    public class DetailModel : PageModel
+    public class EditModel : PageModel
     {
-        public int restaurantId { get; set; }
-        private IRestaurantData restaurant;
-
         public Restaurant Restaurant { get; set; }
-
-        public DetailModel(IRestaurantData rest)
+        private IRestaurantData restaurantData;
+        public EditModel(IRestaurantData restaurantData)
         {
-            restaurant = rest;
+            this.restaurantData = restaurantData;
         }
         public IActionResult OnGet(int restaurantId)
         {
-            Restaurant = restaurant.GetRestaurantById(restaurantId);
-            if(Restaurant == null)
+            Restaurant = restaurantData.GetRestaurantById(restaurantId);
+            if (Restaurant == null)
             {
                 return RedirectToPage("./NotFound");
             }
